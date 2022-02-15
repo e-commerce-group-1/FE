@@ -1,3 +1,44 @@
+# 1st Group Project | E-Commerce App
+##  Group 1
+### Group Leader : Muhammad Rizki Adiwiganda (Front-End)
+### Members : 
+1. Chalimatus Sa'diyah (Front-End)
+2. Luthfi Anesa Sani (Front-End)
+3. Frans Ihsan (Back-End)
+4. Yusuf Nur Wahid (Back-End)
+
+### Features
+- Registration Page
+- Login Page
+- Navbar
+- Footer
+- Carousel
+- List Product
+- Product Detail
+- Cart  
+- Checkout
+- Promo Voucher
+- About Us
+- Contact Us
+- Help
+- Search
+- Filter Product
+- Product Category
+- Bahasa
+- Thank You Page
+- SEO
+- Search Engine
+
+
+### Technologies Used : 
+- Golang
+- Figma
+- ReactJs
+- NextJs
+- Database
+
+			 
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
