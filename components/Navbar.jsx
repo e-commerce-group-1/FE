@@ -103,7 +103,7 @@ export default function NavbarComponent() {
 
           <Link href='/cart'>
             <a>
-              <Button as='a' className='circular ui icon basic secondary button' style={{margin: '0', padding: '0'}} onMouseOver={MouseOver} onMouseOut={MouseOut}>
+              <Button as='a' className='circular ui icon basic secondary button' onMouseOver={MouseOver} onMouseOut={MouseOut}>
                 <Icon name='shop'/>
               </Button>
             </a>  

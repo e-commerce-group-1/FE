@@ -1,0 +1,85 @@
+.containerCheckout, .containerBottom {
+  background-color: #F0F0F0;
+  padding: 2% 5%;
+}
+
+.breadcrumbCheckout {
+  font-size:  16px ;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+  margin-bottom: 25px ;
+}
+
+.titleCheckout {
+  font-size: 36px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.containerForm {
+  background-color: #fff;
+  padding: 2% 5%;
+  
+}
+
+.backgroundForm {
+  background-color: #C4C4C4 !important;
+  padding: 5%
+}
+
+.containerBottom {
+  height: 100px;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #C4C4C4 !important;
+}
+
+.inputContainer:focus-within label {
+  transform: translate(0, 12px) scale(0.8);
+  color: #000;
+}
+
+.inputContainer .filled {
+  transform: translate(0, 12px) scale(0.8);
+  background-color: #C4C4C4 !important;
+}
+
+.inputContainer label {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(0, 23px) scale(1);
+  transform-origin: top left;
+  transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  color: #000;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.inputContainer input {
+  height: 64px;
+  border-radius: none !important;
+  border: none;
+  border-bottom: 2px solid #000 !important;
+  padding: 24px 16px 4px 16px;
+  font-size: 16px;
+  line-height: 1;
+  outline: none !important;
+  box-shadow: none;
+  transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  background-color: #C4C4C4 !important;
+}
+
+.inputContainer input:focus {
+  box-shadow: 0 0 0 2px #000;
+  border-bottom: 2px solid #000 !important;
+  border-radius: none !important;
+  background-color: #C4C4C4 !important;
+  outline: none !important;
+}
+
