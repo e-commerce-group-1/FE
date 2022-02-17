@@ -1,48 +1,61 @@
-import React from 'react'
 import { Container, Grid, Icon } from 'semantic-ui-react'
-
-const footerStyle = {
-  height: "300px",
-  backgroundColor: "#fff",
-  textAlign: "center",
-  alignContent: "center"
-}
+import styles from "../styles/Footer.module.css";
+import {i, icon} from "../styles/Footer.module.css";
+import Image from 'next/image';
+import Link from 'next/link';
+import logo from "../public/LOGO@3x.png";
 
 export default function FooterComponent() {
   return (
-    <>
+    <div className={styles.container}>  
+    
+    <div className={styles.footerLeft}>
+      <Image
+        src={logo}
+        alt="logo"
+        width="100px"
+        height="100px"
+      />
+    </div>
 
-  
-  <Container fluid style={footerStyle}>
-  
-  <Grid columns={3}>
-    <Grid.Row style={{alignItems: "center"}}>
-      <Grid.Column>
-        <h1>LOGO</h1>
-      </Grid.Column>
-      <Grid.Column style={{borderRight: '1.5px solid #000', borderLeft: '1.5px solid #000', transform: 'skewX(-25deg)'}}>
-        <h2 style={{margin: '30px 0 5px -100px', transform: 'skewX(25deg)'}}>About Us</h2>
-        <h2 style={{margin: '0 0 5px 20px', transform: 'skewX(25deg)'}}>Contact Us</h2>
-        <h2 style={{margin: '0 0 30px 130px', transform: 'skewX(25deg)'}}>Help</h2>
-      </Grid.Column>
-      <Grid.Column>
-      <p>
-        <Icon size='large' name='instagram'/>
-        <Icon size='large' name='twitter'/>
-        <Icon size='large' name='facebook'/>
+    <div className={styles.border}></div>
+
+    <div className={styles.footerCenter}>
+      <Link href='/about'>
+        <a>  
+          <p className={styles.aboutUs}>About Us</p>
+        </a>  
+      </Link>
+
+      <Link href='/contact'>
+        <a>  
+          <p className={styles.contactUs}>Contact Us</p>
+        </a>  
+      </Link>
+
+      <Link href='/help'>
+        <a>  
+          <p className={styles.help}>Help</p>
+        </a>  
+      </Link>
+    </div>
+
+    <div className={styles.border}></div>
+
+    <div className={styles.footerRight}>
+    <p>
+        <Icon size='big' name='instagram' className={`${i} ${icon}`} />
+        <Icon size='big' name='twitter' className={`${i} ${icon}`} />
+        <Icon size='big' name='facebook' className={`${i} ${icon}`} />
       </p>
 
       <p> 
-        <Icon size='large' name='linkedin'/>
-        <Icon size='large' name='youtube'/>
-        <Icon size='large' name='pinterest'/>
+        <Icon size='big' name='linkedin' className={`${i} ${icon}`} />
+        <Icon size='big' name='youtube' className={`${i} ${icon}`} />
+        <Icon size='big' name='pinterest' className={`${i} ${icon}`} />
       </p>
-
-      <p style={{marginTop: '30px', fontWeight:'bold'}}>&copy; 2022 Alpha Group Indonesia</p>   
-      </Grid.Column>
-    </Grid.Row>
-  </Grid>
-  </Container>
-  </>
+      <p className={styles.copyright}>&copy; 2022 Alpha Group Indonesia</p>
+    </div>
+    </div>
   )
 }

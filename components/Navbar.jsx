@@ -1,116 +1,124 @@
-import React, { useState} from 'react'
-import { Menu, Image, Container, Button, Icon, Checkbox } from 'semantic-ui-react'
-import Link from 'next/link';
+import styles from "../styles/Navbar.module.css";
+import Link from "next/link";
+import Image from "next/image";
+import {Icon, Checkbox} from 'semantic-ui-react';
+import { useRouter } from "next/router";
+import logo from "../public/LOGO.png"
 
-// Awal CSS
-const navbarStyle = {
-  height: "100px",
-  paddingRight: "5%",
-  paddingLeft: "5%",
-  alignItems: "center",
-  marginTop: '0'
-};
+function NavbarComponent() {
 
-const categoryStyle = {
-  color: "black",
-  fontWeight: "bold",
-  foontSize: "18px",     
-}
+  const router = useRouter();
 
-const topStyle = {
-  height: "56px",
-  backgroundColor: "#F0F0F0",
-  margin: 'auto',
-  alignItems: 'center',
-  display: 'flex',
-  justifyContent: 'end',
-  paddingRight: "5%",
-  paddingLeft: "5%",
-  color: 'black',
-  whiteSpace: 'nowrap',
-}
-
-//  Akhir CSS
-
-export default function NavbarComponent() {
-
-  function MouseOver(event) {
-    event.target.style.transform = 'scale(1.1)';
-  }
-  function MouseOut(event){
-    event.target.style.transform="";
-  }
-
-    return (
-      <Container fluid>
-      <ul style={topStyle}>
-        <li style={{ marginRight: '15px', color: 'black', display: 'inline-block'}}>
-            <Link href='/'>
-              <a> 
-                EN | ID 
-              </a>  
+  function returnNavbar(){
+    if (typeof window !== "undefined") {
+      if (!localStorage.getItem("token")) {
+        return (
+          <>
+            <div className={styles.user}>
+            <Link href='/login'>
+              <a>
+                <button className={styles.login}>
+                Login <Icon name='external alternate' className={styles.icon} />
+                </button>
+              </a>
             </Link>
-        </li>
 
-        <li style={{display: 'inline-block'}}>
-            Dark Mode <Checkbox toggle />
-        </li>  
-      </ul>
-
-      <Menu stackable style={navbarStyle}  className='borderless'>
-      <Link href='/'>
-      <a>
-        <Menu.Item style={categoryStyle} onMouseOver={MouseOver} onMouseOut={MouseOut}>
-          LOGO
-        </Menu.Item>
-      </a>  
-      </Link>  
-
-      <Menu.Menu position='right'>
-      <Link href='/new'>
-      <a>  
-        <Menu.Item  style={categoryStyle} onMouseOver={MouseOver} onMouseOut={MouseOut}>
-          NEW RELEASE
-        </Menu.Item>
-      </a>  
-      </Link>  
-
-      <Link href='/men'>
-       <a> 
-        <Menu.Item style={categoryStyle} onMouseOver={MouseOver} onMouseOut={MouseOut}> 
-          MEN
-        </Menu.Item>
-       </a>  
-      </Link>  
-
-      <Link href='/woman'>
-       <a> 
-        <Menu.Item  style={categoryStyle} onMouseOver={MouseOver} onMouseOut={MouseOut}>
-          WOMAN
-        </Menu.Item>
-        </a>  
-      </Link>  
-    </Menu.Menu>
-
-        <Menu.Item position='right'>
           <Link href='/login'>
-            <a> 
-              <Button as='a' className='circular ui icon basic secondary button' style={{ marginRight: '5px', paddingRight: '20px', paddingLeft: '20px', color: 'black'}} onMouseOver={MouseOver} onMouseOut={MouseOut}>
-                Log in <Icon name='external alternate'/>
-              </Button>
-            </a>  
-          </Link>  
-
-          <Link href='/cart'>
             <a>
-              <Button as='a' className='circular ui icon basic secondary button' onMouseOver={MouseOver} onMouseOut={MouseOut}>
-                <Icon name='shop'/>
-              </Button>
-            </a>  
-          </Link>   
-        </Menu.Item>
+              <button className={styles.circle} >
+              <Icon name='shop' className={styles.icon} />
+              </button>
+            </a>
+          </Link>
+          </div>
+          </>    
+        )
+    }   
 
-      </Menu>
-      </Container>
-    )
+    if (localStorage.getItem("token")) {
+      return (  
+        <>  
+          <div className={styles.user}>
+            <Link href='/cart'>
+              <a>
+                <button className={styles.circle}>
+                <Icon name='shop' className={styles.icon} />
+                </button>
+              </a>
+            </Link>
+
+            <Link href='/'>
+              <a>
+                <button className={styles.circle} 
+                  onClick={() => {
+                  router.push("/");
+                  localStorage.clear();
+                }}>
+                  <Icon name='log out' className={styles.icon} />
+                </button>
+              </a>
+            </Link>
+          </div>
+        </>   
+      )  
+   }
   }
+}
+
+  return (
+      <>
+        <div className={styles.darkmode}>
+          <div className={styles.lang}>
+            <span className={styles.text}>EN | ID</span>
+          </div>
+
+          <div className={styles.border}></div>
+
+          <div className={styles.dark}>
+            Dark Mode
+          </div>
+
+          <div className={styles.toggle}>
+            <Checkbox toggle />
+          </div>
+        </div>  
+      
+        <div className={styles.container}>
+          <div className={styles.logo}>
+            <Image
+                  src={logo}
+                  alt="logo"
+                  width="75px"
+                  height="75px"
+              />
+          </div>
+
+          <div className={styles.menu}>
+            <Link href='/new'>
+            <a className={styles.menus}>  
+                NEW RELEASE
+            </a>  
+            </Link>  
+
+            <Link href='/new'>
+            <a className={styles.menus}>  
+                MEN
+            </a>  
+            </Link> 
+
+            <Link href='/woman'>
+            <a className={styles.menus}>  
+                WOMAN
+            </a>  
+            </Link> 
+          </div>
+
+         <>
+         {returnNavbar()}
+         </>
+       </div>  
+    </>  
+  )
+}
+
+export default NavbarComponent

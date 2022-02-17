@@ -1,7 +1,10 @@
 import { Breadcrumb, Container, Grid, Button, Icon, Input } from 'semantic-ui-react'
 import Image from 'next/image'
+import Link from 'next/link';
 import shoes from "../../public/detail-dummy.jpg";
 import { QuantityPicker } from 'react-qty-picker';
+import styles from "../../styles/DetailProduct.module.css";
+import {i, icon, quantityModifier, quantityPicker} from "../../styles/DetailProduct.module.css";
 
 const sections = [
   { key: 'Home', content: 'Home', link: true },
@@ -12,90 +15,67 @@ const sections = [
 
 export default function DetailProduct(props) {
   return (
-    <Container fluid style={{backgroundColor: "#F0F0F0", padding: "2% 5% 10% 5%"}}>
+    <div className={styles.container}>
     <Breadcrumb icon='right angle' sections={sections} style={{fontSize: "16px", fontWeight: "bold", textDecoration: "none", color: "#000", backgroundColor: "#F0F0F0", marginBottom: "2%"}} />
 
-    <Grid relaxed>
-      <Grid.Row>
-        <Grid.Column width={7}>
-          <h1 style={{fontSize: "48px"}}>Product Name</h1>
-          <p style={{fontSize: "24px"}}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, excepturi ducimus quaerat quisquam error, natus praesentium facilis nam vel beatae corrupti? Id natus laudantium et, tempore neque ut totam alias.</p>
-          <Grid>
-          <Grid.Row width={6} style={{display:'grid', gridTemplateColumns: '2fr 1fr'}}>
-            <Grid.Column width={10}>
-              <p style={{fontSize: "24px"}}>Rp. 10.000.000</p>
-            </Grid.Column>
+      <div className={styles.main}>
+        <div className={styles.sideLeft}>
+          <p className={styles.title}>Product Name</p>
+          <p className={styles.description}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quisquam ea repudiandae in provident cupiditate iste tenetur delectus repellat? Fugiat laborum soluta error odit officiis aliquid itaque hic, in voluptatibus.</p>
+          <div className={styles.priceQuantity}>
+            <div className={styles.price}>Rp. 10.000.000</div>
+            <div className={styles.quantity}><QuantityPicker min={0} className={`${quantityModifier} ${quantityPicker}`} /></div>
+          </div>
 
-            <Grid.Column width={16}>
-              <QuantityPicker min={0} />
-            </Grid.Column>
-          </Grid.Row>
-          </Grid>
+          <div className={styles.shop}>
+            <div>
+              <button className={styles.cart}>
+                Add to Cart <Icon name='shop' className={`${i} ${icon}`} />
+              </button>
+            </div>
+            <div>
+              <Link href='/checkout/[id]'>
+                <a>
+                  <button  className={styles.buy}>
+                  Buy Now <Icon name='shopping bag' className={`${i} ${icon}`} />
+                  </button>
+                </a>
+              </Link>
+            </div>
+          </div>
+        </div>
 
-          <Button style={{backgroundColor: "#fff", color: "#000", fontSize: "18px"}}>Add to Cart  <Icon name='shop' style={{marginLeft: "3px"}}/></Button>
-        </Grid.Column>
-
-       
-       <Grid.Column width={9}>
-          <Grid.Row style={{display:'grid', gridTemplateColumns: '5.5fr 1fr'}}>
-            <Grid.Column width={8}>
+        <div className={styles.sideRight}>
+          <div className={styles.containerImage}>
+            <div className={styles.displayImage}>
               <Image
-                src={shoes}
-                alt="Picture of the author"
-                width="580px"
-                height="454px"
-              />
-            </Grid.Column>
-
-            <Grid.Column width={2} style={{padding: "0"}}>
-              <Grid.Row style={{backgroundColor: "#fff", width: "100px", height: "100px", marginBottom: "5px"}}></Grid.Row>
-              <Grid.Row style={{backgroundColor: "#fff", width: "100px", height: "100px", marginBottom: "5px"}}></Grid.Row>
-              <Grid.Row style={{backgroundColor: "#fff", width: "100px", height: "100px", marginBottom: "5px"}}></Grid.Row>
-              <Grid.Row style={{backgroundColor: "#fff", width: "100px", height: "100px", marginBottom: "5px"}}></Grid.Row>
-            </Grid.Column>
-          </Grid.Row>
-
-          <Grid.Row>
-            <p style={{fontSize: "18px", color: "#000"}}>Select Size</p>
-          </Grid.Row>
-          <Grid>
-          <Grid.Row style={{textAlign: "center", display:'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(80px, 1fr))'}}>
-            <Grid.Column width={2} style={{marginRight: "1px"}}>
-            <Button style={{backgroundColor: "#fff", color: "#000", fontSize: "18px"}}>35</Button>
-            </Grid.Column>
-            <Grid.Column width={2} style={{marginRight: "1px"}}>
-            <Button style={{backgroundColor: "#fff", color: "#000", fontSize: "18px"}}>36</Button>
-            </Grid.Column>
-
-            <Grid.Column width={2} style={{marginRight: "1px"}}>
-            <Button style={{backgroundColor: "#fff", color: "#000", fontSize: "18px"}}>37</Button>
-            </Grid.Column>
-
-            <Grid.Column width={2} style={{marginRight: "1px"}}>
-            <Button style={{backgroundColor: "#fff", color: "#000", fontSize: "18px"}}>38</Button>
-            </Grid.Column>
-
-            <Grid.Column width={2} style={{marginRight: "1px"}}>
-            <Button style={{backgroundColor: "#fff", color: "#000", fontSize: "18px"}}>39</Button>
-            </Grid.Column>
-
-            <Grid.Column width={2} style={{marginRight: "1px"}}>
-            <Button style={{backgroundColor: "#fff", color: "#000", fontSize: "18px"}}>40</Button>
-            </Grid.Column>
-
-            <Grid.Column width={2} style={{marginRight: "1px"}}>
-            <Button style={{backgroundColor: "#fff", color: "#000", fontSize: "18px"}}>41</Button>
-            </Grid.Column>
-
-            <Grid.Column width={2} style={{marginRight: "1px"}}>
-            <Button style={{backgroundColor: "#fff", color: "#000", fontSize: "18px"}}>42</Button>
-            </Grid.Column>
-          </Grid.Row>
-          </Grid>
-        </Grid.Column>
-
-      </Grid.Row>
-    </Grid>
-    </Container>
+                  src={shoes}
+                  alt="display"
+                  width="580px"
+                  height="454px"
+                />
+            </div>
+            <div>
+              <div className={styles.detail}></div>
+              <div className={styles.detail}></div>
+              <div className={styles.detail}></div>
+              <div className={styles.detail}></div>
+            </div>
+          </div>
+          <div className={styles.size}>
+            <p>Select Size</p>
+            <div className={styles.sizeContainer}>
+              <div className={styles.sizeOption}>35</div>
+              <div className={styles.sizeOption}>36</div>
+              <div className={styles.sizeOption}>37</div>
+              <div className={styles.sizeOption}>38</div>
+              <div className={styles.sizeOption}>39</div>
+              <div className={styles.sizeOption}>40</div>
+              <div className={styles.sizeOption}>41</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
