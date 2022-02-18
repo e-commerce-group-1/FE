@@ -1,0 +1,30 @@
+.p1 {
+  font-size: 50px;
+  font-family: Trebuchet MS;
+}
+
+.trebuchet {
+  font-family: Trebuchet MS;
+}
+
+.header {
+  /* color: red; */
+  text-align: center;
+}
+
+.borderFull {
+  border: solid 2px black;
+}
+
+.borderBottom {
+  border-bottom: solid 2px;
+}
+
+.borderNone {
+  border: none;
+}
+
+/* .borderBottom {
+  border-bottom: solid 2px black;
+} */
+
