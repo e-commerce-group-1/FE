@@ -4,6 +4,7 @@
 }
 
 .main {
+  width: 100%;
   padding-top: 2%;
   display: flex;
   justify-content: space-between;
@@ -124,105 +125,3 @@
   vertical-align: middle;
   line-height: 70px;
 }
-/* .containerProduct {
-  background-color: #f0f0f0;
-  padding: 2% 5% 10% 5%;
-  margin-top: 156px;
-}
-
-.breadProduct {
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #000;
-  background-color: #f0f0f0;
-  margin-bottom: 2%;
-}
-
-.productName {
-  font-size: 48px;
-}
-
-.description {
-  font-size: 24px;
-  color: #000;
-}
-
-.ui.button {
-  background: #fff;
-}
-
-.priceQuantity {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-}
-
-.ui.button {
-  background-color: #fff;
-  color: #000;
-  font-size: 18px;
-}
-
-.iconStyle {
-  margin-left: 3px;
-}
-
-.imageDisplay {
-  display: grid;
-  grid-template-columns: 5.5fr 1fr;
-}
-
-.imageDetail {
-  background-color: #fff;
-  width: 100px;
-  height: 100px;
-  margin-bottom: 5px;
-}
-
-.sizeOption {
-  font-size: 18px;
-  color: #000;
-}
-
-.ui.button.sizeProduct {
-  background: #fff;
-  font-size: 18px;
-  color: #000;
-}
-
-.sizeGrid {
-  text-align: center;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-}
-
-.sizeColumn{
-  margin-right: 1px;
-}
-
-.ui.button {
-  background: #fff;
-}
-
-.buttonQuantity {
-  background: #fff !important;
-  color: #000 !important;
-}
-
-.quantity-picker {
-  display: inline-block;
-  border: none;
-  border-radius: 0;
-  vertical-align: middle;
-}
-
-.quantity-modifier {
-  height: 100%;
-  width: 3rem;
-  font-size: 1.5rem;
-  background: #fff;
-  color: #000;
-  border: none;
-  text-align: center;
-  cursor: pointer;
-} */
