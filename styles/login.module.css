@@ -1,0 +1,84 @@
+/* Grid {
+  text-align: center;
+  height: 100vh;
+  vertical-align:middle;
+}
+
+Grid.Column {
+  max-width: 450;
+} */
+
+/* .all {
+  font-family: 'Arial';
+} */
+
+
+/* .modal_body_overflow {
+  height: 70vh;
+  overflow-y: scroll;
+} */
+
+
+.header {
+  color: white;
+  /* text-decoration: underline; */
+}
+
+.trebuchet {
+  font-family: Trebuchet MS;
+}
+
+.borderFull {
+  border: solid 2px black;
+}
+
+.borderBottom {
+  border-bottom: solid 2px;
+}
+
+.btnMsk {
+  font-family: 'Trebuchet MS';
+}
+
+
+
+.borderNone-Input[placeholder="Email"] {
+  border: none;
+}
+
+/* .column {
+  border: none;
+} */
+
+
+/* .FormInput[placeholder="Kata Sandi"] {
+  border: none;
+} */
+
+/* .ui.fluid.left.icon.input {
+  border: none;
+} */
+
+/* .input[placeholder="Kata Sandi"] {
+  border: none;
+} */
+
+/* .placeholder {
+  border:none;
+} */
+
+
+
+
+
+
+
+/* Kenapa gak bisa begini ? */
+/* Form.Input[placeholder='Email'] {
+  border: none;
+  border-bottom: solid 2px;
+} */
+
+/* .Segment[placeholder="Email"] {
+  border: none;
+} */
