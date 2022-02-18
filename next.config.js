@@ -1,6 +1,10 @@
 module.exports = {
   reactStrictMode: true,
 
+  images: {
+    domains: ['picsum.photos'],
+  },
+
   async rewrites() {
     return [
       {
