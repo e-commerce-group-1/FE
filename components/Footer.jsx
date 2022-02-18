@@ -3,19 +3,26 @@ import styles from "../styles/Footer.module.css";
 import {i, icon} from "../styles/Footer.module.css";
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from "../public/LOGO@3x.png";
+import logo from "../public/log.png";
+import { useRouter } from 'next/router';
 
 export default function FooterComponent() {
+  
+  const router = useRouter();
   return (
     <div className={styles.container}>  
     
     <div className={styles.footerLeft}>
-      <Image
-        src={logo}
-        alt="logo"
-        width="100px"
-        height="100px"
-      />
+      <Link href='/'>
+        <a className={router.pathname == "/" ? "active" : ""}>
+          <Image
+            src={logo}
+            alt="logo"
+            width="157px"
+            height="90px"
+          />
+        </a>
+      </Link>
     </div>
 
     <div className={styles.border}></div>
