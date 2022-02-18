@@ -1,0 +1,134 @@
+.container {
+  padding: 5% 5% 10% 5%;
+  background-color: #f0f0f0;
+}
+
+.main {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  margin: -3% -7%;
+  padding: 2% 7%;
+}
+
+.mainLeft, .mainRight {
+  width: 50%;
+  text-align: start;
+  margin: 0 20px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  margin-bottom: 18px;
+}
+
+
+.shipping, .credit, .order {
+  background-color: #c4c4c4;
+  padding: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.shipping {
+  flex-direction: column;
+}
+
+.shippingAddress {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+.name, .email, .phone, .address, .city, .province {
+  width: 100%;
+}
+
+.credit, .order {
+  margin-bottom: 20px;
+  flex-direction: row;
+}
+
+.nameCard, .cardNumber {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.visa, .nameInput, .numberInput, .numberCv {
+  justify-content: space-between;
+  width: 50%;
+  margin: 0;
+  padding: 5px 10px 0 0;
+}
+
+.expiredCard {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.expired, .month, .year, .border {
+  justify-content: space-between;
+  align-self: stretch;
+  align-items: stretch;
+  padding: 5px;
+}
+
+.expired {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.border {
+  border-right: 1.8px solid #000;
+  height: 40px;
+  transform: skewX(-25deg);
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.buy {
+  height: 50px;
+  font-size: 18px;
+  background-color: #fff;
+  border: none;
+  border-radius: none;
+  padding-right: 15px;
+  text-align: center;
+  padding: 5px 20px;
+  box-shadow: 0 3px 5px 1px rgba(0,0,0,.2);
+}
+
+.buy:hover {
+  font-weight: bold;
+}
+
+.i.icon {
+  margin: 0 !important;
+  padding-left: 10px;
+}
+
+.subtotal, .cost {
+  display: flex;
+  justify-content: between;
+}
+
+/* .borderReview {
+  border: 1.8px solid #000;
+  height: 10px;
+} */
+
+.total {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.orderReview {
+  font-size: 20px;
+  font-weight: 700;
+}
