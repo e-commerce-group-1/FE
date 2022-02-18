@@ -1,12 +1,14 @@
 import FooterComponent from "./Footer";
+import HeadApp from "./Head";
 import NavbarComponent from "./Navbar";
 
 function Layout({children}) {
 
   return ( 
     <>
+      <HeadApp />
       <NavbarComponent />
-      <div className="mt-8">{children}</div>
+      <div>{children}</div>
       <FooterComponent />
     </>
   );
