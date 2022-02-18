@@ -1,0 +1,118 @@
+.container{
+    background: #fff;
+    margin-bottom: 3rem;
+}
+
+.categoryList{
+    display: flex;
+    justify-content: center;
+    margin: 0px 10%;
+    padding: 2rem 0px;
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+.categoryTitle{
+    position: relative;
+    cursor: default;
+}
+.categoryTitle::after{
+    content: " ";
+    width: 0px;
+    height: 35px;
+    margin-left: 1.5rem;
+    border-right: solid 0.22rem #000;
+    transform: rotate(30deg);
+    position: absolute;
+    top: -3px;
+}
+
+.categoryItem{
+    margin: 0px 2rem;
+    cursor: pointer;
+}
+
+.active{
+    border-bottom: #000 solid 3.2px;
+}
+
+.productlist{
+    margin: 1rem 10%;
+}
+
+.contentCard:hover .descriptionSection, .contentCard:hover .buttonSection{
+    width: 50%;
+}
+
+.contentCard{
+    display: flex;
+    background: #f2f2f2;
+}
+
+.contentCard:hover .buttonSection{
+    opacity: 1;
+}
+
+.contentCard h5{
+    font-size: 1.25rem;
+}
+
+.descriptionSection{
+    background: #F2F2F2;
+    padding: 1rem 0px;
+    padding-left: 0.5rem;
+    width: 100%;
+}
+
+.buttonSection {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+}
+
+.buttonSection span{
+    content: " ";
+    background: #F2F2F2;
+    height: 250px;
+    position: absolute;
+    width: 100px;
+    transform: rotate(20deg);
+    left: -80px;
+    top: -35px;
+}
+
+.buttonSection button{
+    height: 50%;
+    width: 100%;
+    background: #DADADA;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0px 1.3rem;
+    text-align: right;
+}
+
+.buttonSection button:last-child{
+    background-color: #000;
+    color: #fff;
+}
+
+.moreButton{
+    display: flex;
+    justify-content: center;
+}
+
+.moreButton button{
+    margin: 1rem 0px;
+    border: none;
+    height: 40px;
+    padding: 0px 1rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background: none;
+    border: #000 solid 2px;
+}
+

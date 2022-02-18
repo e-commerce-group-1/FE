@@ -4,6 +4,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  background: #f0f0f0;
   font-family: Trebuchet MS;
 }
 
@@ -14,4 +15,5 @@ a {
 
 * {
   box-sizing: border-box;
+  transition: all ease 0.4s;
 }

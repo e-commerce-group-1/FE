@@ -1,0 +1,49 @@
+.promoCard{
+    display: flex;
+    height: 200px;
+    background-color: #fff;
+    padding: 20px 15px;
+    margin-bottom: 3rem;
+}
+
+.promoLeft{
+    justify-content: flex-end;
+}
+
+.promoRight{
+    justify-content: flex-start;
+}
+
+.promoCard img{
+    position: absolute;
+    top: -5rem;
+}
+
+.promoLeft img{
+    width: 15rem;
+    left: -2rem;
+}
+
+.promoRight img{
+    width: 18rem;
+    right: -3rem;
+}
+
+
+.promoBody{
+    width: 60%;
+    font-weight: bold;
+}
+
+.promoBody h4{
+    font-size: 1.75rem;
+}
+
+.promoBody p{
+    font-size: 1.1rem;
+    color: #828282;
+}
+
+.promoBody a{
+    text-align: left;
+}
