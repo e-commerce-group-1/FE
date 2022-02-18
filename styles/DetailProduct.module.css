@@ -1,6 +1,133 @@
-.containerProduct {
+.container {
+  padding: 3% 5%;
+  background-color: #f0f0f0;
+}
+
+.main {
+  padding-top: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sideLeft {
+  text-align: start;
+  width: 40%;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.description, .price {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.priceQuantity, .shop {
+  display: flex;
+  align-items: center;
+}
+
+.priceQuantity {
+  justify-content: space-between;
+}
+
+.quantity-picker {
+  display: inline-block;
+  border: none !important;
+  border-radius: none !important;
+  vertical-align: middle;
+}
+
+.quantity-modifier {
+  width: 3rem;
+  font-size: 1.5rem;
+  background: #fff !important;
+  color: #000 !important;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.shop {
+  justify-content: start;
+  margin-top: 25px;
+}
+
+.cart {
+  margin-right: 15px;
+  width: 174px;
+}
+
+.cart, .buy {
+  height: 50px;
+  font-size: 18px;
+  background-color: #fff;
+  border: none;
+  border-radius: none;
+  padding-right: 15px;
+  text-align: center;
+  padding: 5px 20px;
+  box-shadow: 0 3px 5px 1px rgba(0,0,0,.2);
+}
+
+.cart:hover, .buy:hover{
+  font-weight: bold;
+}
+
+.i.icon {
+  margin: 0 !important;
+  padding-left: 10px;
+}
+
+.sideRight {
+  text-align: start;
+  width: 60%;
+}
+
+.containerImage {
+  display: flex;
+  flex-wrap: row;
+  justify-content: space-evenly;
+}
+
+.displayImage {
+  margin-left: 50px;
+}
+
+
+.detail {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  margin-bottom: 18px;
+}
+
+.size{
+  margin-left: 68px;
+  font-size: 18px;
+}
+
+.sizeContainer {
+  display: flex;
+  flex-wrap: row;
+}
+
+.sizeOption {
+  width: 68px;
+  height: 70px;
+  background-color: #fff;
+  margin-right: 20px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 70px;
+}
+/* .containerProduct {
   background-color: #f0f0f0;
   padding: 2% 5% 10% 5%;
+  margin-top: 156px;
 }
 
 .breadProduct {
@@ -82,7 +209,7 @@
   color: #000 !important;
 }
 
-/* .quantity-picker {
+.quantity-picker {
   display: inline-block;
   border: none;
   border-radius: 0;
