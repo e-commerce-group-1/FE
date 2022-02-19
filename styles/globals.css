@@ -1,4 +1,4 @@
-@import url('http://fonts.cdnfonts.com/css/trebuchet-ms-2');
+@import url("http://fonts.cdnfonts.com/css/trebuchet-ms-2");
 
 html,
 body {
@@ -18,3 +18,39 @@ a {
   transition: all ease 0.4s;
 }
 
+/* Styling placeholder border email dan kata sandi */
+.ui.form .field .ui.input input,
+.ui.form .fields .field .ui.input input {
+  border: none;
+}
+
+/* Styling tombol submit masuk & daftar */
+.ui.fluid.button, .ui.fluid.buttons {
+  text-align: center;
+  float: right;
+  width: 5em;
+  height: 2em;
+  padding: 2px;
+  margin: 0;
+  background-color: transparent;
+  color: black;
+  border: solid 2px;
+}
+
+/* Styling main box form login & daftar */
+.ui.segment {
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+
+/* Styling message box Belum Punya Akun */
+.ui.message {
+  background: none;
+  box-shadow: none;
+}
+
+/* Styling placeholder background email & kata sandi */
+.ui.form input:not([type]), .ui.form input[type=date], .ui.form input[type=datetime-local], .ui.form input[type=email], .ui.form input[type=file], .ui.form input[type=number], .ui.form input[type=password], .ui.form input[type=search], .ui.form input[type=tel], .ui.form input[type=text], .ui.form input[type=time], .ui.form input[type=url] {
+  background: transparent;
+}

@@ -1,37 +1,43 @@
 import { React } from "react";
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
-import style from "../styles/register.module.css"
-
-
+import { Button, Form, Grid, Header, Image, Message, Segment, Input } from 'semantic-ui-react'
+import { greet, header, trebuchet, borderBottom, btnDftr, input, masuk, welcomeImg, classFlex  }  from "../styles/register.module.css"
+import { FaSignInAlt } from 'react-icons/fa';
 
 function Register() {
   return (
-  <div className={ style.trebuchet }>
-      <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
-    <Grid.Column style={{ maxWidth: 450 }}>
-      <p className= {style.p1}>Selamat Datang</p>
-      <Header className={ style.header } as='h2' color='black' textAlign='center'>
-         
-      </Header>
-      <Form className={ style.borderFull } size='large'>
-        <Segment stacked>
-          <Form.Input className={ style.borderBottom }  fluid icon='user' iconPosition='left' placeholder='Email' />
-          <Form.Input className={ style.borderBottom }
-            fluid
-            icon='lock'
-            iconPosition='left'
-            placeholder='Kata Sandi'
-            type='password'
-          />
+  <div className={`${trebuchet} ${classFlex}`}>
+    <img src="/BrownJacket.jpg" className={welcomeImg}/>
 
-          <Button color='black' fluid size='large' className={ style.trebuchet }>
-            Daftar
+      <Grid textAlign='center' style={{ height: '100vh', width: '100%'  }} verticalAlign='middle'>
+    <Grid.Column className={greet} style={{ maxWidth: 450 }}>
+    <p>Selamat Datang</p>
+      <Header className={`${trebuchet} ${header}`} as='h2' color='black' textAlign='center' >
+      </Header>
+      <Form className={trebuchet} size='large'>
+        <Segment>
+          <Form.Input className={`${trebuchet}  ${borderBottom}`} fluid icon='user' iconPosition='left' placeholder='Nama Pengguna' />
+          <Form.Input className={`${trebuchet}  ${borderBottom}`} fluid icon='mail' iconPosition='left' placeholder='Email' />
+          <Form.Field>
+            <Input 
+              className={`${trebuchet}  ${borderBottom} ${input}`}
+              fluid
+              icon='lock'
+              iconPosition='left'
+              placeholder='Kata Sandi'
+              type='password'
+            />
+          </Form.Field>
+          <Button  className={`${trebuchet} ${btnDftr}`} color='black' fluid size='large' className={btnDftr}>
+            <p>Daftar <FaSignInAlt/></p>
+
           </Button>
+          <div className={`${trebuchet} $ ${masuk}`}>
+        Sudah Punya Akun? <a href='login'>Masuk</a>
+      </div>
         </Segment>
       </Form>
-      <Message className= { style.borderFull }>
-        Sudah Punya Akun? <a href='login'>Masuk</a>
-      </Message>
+
+      
     </Grid.Column>
   </Grid>
     </div>
