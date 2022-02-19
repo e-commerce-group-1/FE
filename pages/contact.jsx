@@ -4,7 +4,7 @@ import {Icon} from "semantic-ui-react";
 
 export default function ContactUs() {
   return (
-    <div className={styles.container}>
+    <div>
       <h1 className={styles.title}>Get in Touch</h1>
 
       <div className={styles.contactList}>
@@ -60,8 +60,14 @@ export default function ContactUs() {
           <button className={styles.send}>Send <Icon name='send' className={`${i} ${icon}`} /></button>
         </div>
       </div>
-      <style global jsx> 
-        {`
+      <style global jsx> {`
+        html,
+        body {
+          padding: 0;
+          margin: 0;
+          background: #f0f0f0;
+          font-family: Trebuchet MS;
+        }
           form{
               max-width:100%;
               display:flex;
@@ -135,6 +141,11 @@ export default function ContactUs() {
               font-size: 15px;
               font-weight: bold;
               transform:translateY(0px);
+          }
+
+          a {
+            color: #000;
+            text-decoration: none;
           }
        `}</style>
     </div>
