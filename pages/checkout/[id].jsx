@@ -128,6 +128,13 @@ export default function CheckoutDetail() {
 
        <style global jsx> 
         {`
+        html,
+        body {
+          padding: 0;
+          margin: 0;
+          background: #f0f0f0;
+          font-family: Trebuchet MS;
+        }
           form{
               max-width:100%;
               display:flex;
@@ -176,7 +183,7 @@ export default function CheckoutDetail() {
             border: none;
             outline: none;
             font-size: 20px;
-            font-weight: 400;
+            font-weight: 500;
             font-family: Trebuchet MS
             padding-right: 30px;
             background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Font_Awesome_5_solid_angle-double-down.svg/1200px-Font_Awesome_5_solid_angle-double-down.svg.png);
