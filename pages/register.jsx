@@ -5,7 +5,7 @@ import { FaSignInAlt } from 'react-icons/fa';
 
 function Register() {
   return (
-  <div className={`${trebuchet} ${classFlex}`}>
+  <div className={`${trebuchet} ${classFlex}`} style={{marginTop: "-3rem"}}>
     <img src="/BrownJacket.jpg" className={welcomeImg}/>
 
       <Grid textAlign='center' style={{ height: '100vh', width: '100%'  }} verticalAlign='middle'>

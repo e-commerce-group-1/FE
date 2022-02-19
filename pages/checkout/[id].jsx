@@ -56,10 +56,6 @@ export default function CheckoutDetail() {
           <div className={styles.credit}>
            <form autoComplete="off">
             <div className={styles.nameCard}>
-              {/* <label htmlFor="visa" className={styles.visa}>
-                  <input type="text" id="visa" placeholder="Visa" required autoComplete="off" />
-                  <h5>Visa</h5>
-              </label> */}
 
               <select name="card" id="card" className={styles.visa}>
                 <option value="visa">Visa</option>
@@ -91,10 +87,9 @@ export default function CheckoutDetail() {
                   <h5 style={{marginLeft: "5px"}}>MM</h5>
               </label>
 
-              {/* <div className={styles.border}></div> */}
               <h6 className={styles.expired} style={{marginLeft: "20px"}}>╱</h6>
               <label htmlFor="year" style={{width: "10%"}} className={styles.year}>
-                  <input input type="text" maxLength="2" id="year" placeholder="YY" required autoComplete="off" />
+                  <input input type="text" maxLength="2" id="year" placeholder="YY" required autoComplete="off" style={{marginTop: "20px"}} />
                   <h5 style={{marginLeft: "10px"}}>YY</h5>
               </label>
             </div>
