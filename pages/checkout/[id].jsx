@@ -1,6 +1,6 @@
-import { Breadcrumb, Grid, Form, Icon} from 'semantic-ui-react'
 import styles from '../../styles/Checkout.module.css';
 import {i, icon} from "../../styles/Checkout.module.css";
+import { Breadcrumb, Grid, Form, Icon} from 'semantic-ui-react'
 
 const sections = [
   { key: 'Home', content: 'Home', link: true },
@@ -10,6 +10,7 @@ const sections = [
 ]
 
 export default function CheckoutDetail() {
+
   return (
     <div className={styles.container}>
        <Breadcrumb icon='right angle' sections={sections} style={{fontSize: "16px", fontWeight: "bold", textDecoration: "none", color: "#000", backgroundColor: "#F0F0F0", marginBottom: "7%", alignItems: "center"}} />
@@ -55,14 +56,20 @@ export default function CheckoutDetail() {
           <div className={styles.credit}>
            <form autoComplete="off">
             <div className={styles.nameCard}>
-              <label htmlFor="visa" className={styles.visa}>
-                    <input type="text" id="visa" placeholder="Visa" required autoComplete="off" />
-                    <h5>Visa</h5>
-                </label>
-                <label htmlFor="name-card" className={styles.nameInput}>
-                    <input type="text" id="name-card" placeholder="Name on Card" required autoComplete="off" />
-                    <h5>Name on Card</h5>
-                </label>
+              {/* <label htmlFor="visa" className={styles.visa}>
+                  <input type="text" id="visa" placeholder="Visa" required autoComplete="off" />
+                  <h5>Visa</h5>
+              </label> */}
+
+              <select name="card" id="card" className={styles.visa}>
+                <option value="visa">Visa</option>
+                <option value="master">Master Card</option>
+              </select>
+
+              <label htmlFor="name-card" className={styles.nameInput}>
+                  <input type="text" id="name-card" placeholder="Name on Card" required autoComplete="off" />
+                  <h5 style={{marginLeft: "35px"}}>Name on Card</h5>
+              </label>
             </div>
 
             <div className={styles.cardNumber}>
@@ -77,16 +84,18 @@ export default function CheckoutDetail() {
             </div>
 
             <div className={styles.expiredCard}>
-              <h6 className={styles.expired}>Expiration Date</h6>
+              <h6 className={styles.expired} style={{marginRight: "15px"}}>Expiration Date</h6>
+
               <label htmlFor="month" style={{width: "10%"}} className={styles.month}>
-                  <input type="text" id="month" placeholder="MM" required autoComplete="off" />
-                  <h5>MM</h5>
+                  <input type="text" maxLength="2" id="month" placeholder="MM" required autoComplete="off" />
+                  <h5 style={{marginLeft: "5px"}}>MM</h5>
               </label>
 
-              <div className={styles.border}></div>
+              {/* <div className={styles.border}></div> */}
+              <h6 className={styles.expired} style={{marginLeft: "20px"}}>╱</h6>
               <label htmlFor="year" style={{width: "10%"}} className={styles.year}>
-                  <input type="text" id="year" placeholder="YY" required autoComplete="off" />
-                  <h5>YY</h5>
+                  <input input type="text" maxLength="2" id="year" placeholder="YY" required autoComplete="off" />
+                  <h5 style={{marginLeft: "10px"}}>YY</h5>
               </label>
             </div>
 
@@ -108,9 +117,9 @@ export default function CheckoutDetail() {
             <div className={styles.borderReview}></div>
 
             <div className={styles.total}>
-              <h6 className={styles.orderReview}>Total</h6>
-              {/* <div className={styles.borderTotal}></div> */}
-              <h6 className={styles.orderReview}>Rp. 10.000.000</h6>
+              <h6 className={styles.orderReview} style={{marginRight: "10px"}}>Total Price</h6>
+              <div className={styles.borderTotal}></div>
+              <h6 className={styles.orderReview} style={{marginLeft: "10px"}}>Rp. 10.000.000</h6>
             </div>
           </div>
           <button className={styles.buy}>Checkout <Icon name='arrow right' className={`${i} ${icon}`} /></button>
@@ -119,6 +128,13 @@ export default function CheckoutDetail() {
 
        <style global jsx> 
         {`
+        html,
+        body {
+          padding: 0;
+          margin: 0;
+          background: #f0f0f0;
+          font-family: Trebuchet MS;
+        }
           form{
               max-width:100%;
               display:flex;
@@ -149,6 +165,7 @@ export default function CheckoutDetail() {
               left:0;
               transform:translateY(30px);
               font-size:20px;
+              colot: #000;
               transition-duration:300ms;
           }
 
@@ -159,6 +176,43 @@ export default function CheckoutDetail() {
               font-weight: bold;
               transform:translateY(0px);
           }
+          select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: none;
+            outline: none;
+            font-size: 20px;
+            font-weight: 500;
+            font-family: Trebuchet MS
+            padding-right: 30px;
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Font_Awesome_5_solid_angle-double-down.svg/1200px-Font_Awesome_5_solid_angle-double-down.svg.png);
+            background-repeat: no-repeat;
+            background-position: calc(100% - 3px) center;
+            background-size: 10px;
+          }
+          select::-ms-expand {
+            display: none;
+          }
+          select:focus {
+            border:none;
+            border-bottom: 2px solid #000;
+            outline: none;
+          }
+          select#xyz {
+            border:none;
+            outline:none;
+          }
+          option {
+            outline:none;
+            border: none;
+            font-size: 20px;
+            background-color: #f0f0f0;
+          }
+          option:hover, .option:focus {
+            background-color: #fff;
+          }
+
        `}</style>
     </div>
   )

@@ -1,5 +1,5 @@
 .container {
-  padding: 5% 5% 10% 5%;
+  padding: 0 5% 10% 5%;
   background-color: #f0f0f0;
 }
 
@@ -27,7 +27,7 @@
 
 
 .shipping, .credit, .order {
-  background-color: #c4c4c4;
+  background-color: #f0f0f0;
   padding: 5%;
   display: flex;
   flex-wrap: wrap;
@@ -60,10 +60,31 @@
 }
 
 .visa, .nameInput, .numberInput, .numberCv {
-  justify-content: space-between;
-  width: 50%;
+  display: flex;
   margin: 0;
-  padding: 5px 10px 0 0;
+  padding: 5px 0 0 0;
+}
+
+.numberInput, .numberCv {
+  justify-content: space-between;
+}
+
+.visa {
+ justify-content: space-between;
+ border-bottom: 2px solid #000;
+ background-color: #f0f0f0;
+}
+
+.nameInput {
+ justify-content: flex-end;
+}
+
+.visa, .numberCv {
+  width: 40%;
+}
+
+.nameInput, .numberInput {
+  width: 60%;
 }
 
 .expiredCard {
@@ -72,11 +93,16 @@
   flex-direction: row;
 }
 
-.expired, .month, .year, .border {
+.expired {
   justify-content: space-between;
   align-self: stretch;
   align-items: stretch;
-  padding: 5px;
+  padding-right: 5px;
+}
+
+.month, .year {
+  padding: 0;
+  margin: 0;
 }
 
 .expired {
@@ -87,9 +113,10 @@
 .border {
   border-right: 1.8px solid #000;
   height: 40px;
+  line-height: -40px;
   transform: skewX(-25deg);
-  margin: 0;
-  padding-bottom: 0;
+  margin: 0 15px -40px 30px;
+  align-items: center
 }
 
 .buy {
@@ -106,6 +133,7 @@
 
 .buy:hover {
   font-weight: bold;
+  transition: font-weight 0.5s ease;
 }
 
 .i.icon {
@@ -113,22 +141,37 @@
   padding-left: 10px;
 }
 
-.subtotal, .cost {
-  display: flex;
-  justify-content: between;
+.order {
+  height: 220px;
+  align-items: center;
 }
 
-/* .borderReview {
-  border: 1.8px solid #000;
-  height: 10px;
-} */
+.subtotal, .cost {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 0;
+}
+
+.borderReview {
+  border-bottom: 2px solid #000;
+  width: 100%;
+}
+
+.borderTotal {
+  border-right: 1.8px solid #000;
+  height: 20px;
+  transform: skewX(-25deg);
+}
 
 .total {
   display: flex;
   justify-content: flex-end;
+  width: 100%;
 }
 
 .orderReview {
   font-size: 20px;
-  font-weight: 700;
+  /* font-weight: 700; */
+  margin: 0;
 }
