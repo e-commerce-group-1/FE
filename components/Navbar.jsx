@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {Icon, Checkbox} from 'semantic-ui-react';
 import { useRouter } from "next/router";
-import logo from "../public/log.png";
+import logo from "../public/al.png";
 
 function NavbarComponent() {
 
@@ -90,8 +90,8 @@ function NavbarComponent() {
                 <Image
                       src={logo}
                       alt="logo"
-                      width="156x"
-                      height="79px"
+                      width="151px"
+                      height="61px"
                   />
                 </a>
             </Link>

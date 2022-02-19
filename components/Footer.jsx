@@ -3,7 +3,7 @@ import styles from "../styles/Footer.module.css";
 import {i, icon} from "../styles/Footer.module.css";
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from "../public/log.png";
+import logo from "../public/al.png";
 import { useRouter } from 'next/router';
 
 export default function FooterComponent() {
@@ -18,8 +18,8 @@ export default function FooterComponent() {
           <Image
             src={logo}
             alt="logo"
-            width="157px"
-            height="90px"
+            width="191px"
+            height="91px"
           />
         </a>
       </Link>
