@@ -1,0 +1,174 @@
+.breadCrumbs{
+    text-decoration: none;
+    color: #000;
+}
+
+.marginSet, .sumPrice{    
+    margin: 1rem 5%;
+}
+
+.container{
+    background: #fff;
+    margin-bottom: 3rem;
+    padding: 1.5rem 0px;
+    display: flex;
+}
+
+.item{
+    display: flex;
+    background: #f2f2f2;
+    position: relative;
+    margin: 1rem 0px;
+    overflow: hidden;
+}
+
+.descriptions, .prices{
+    padding: 1.5rem 2.5rem;
+}
+
+.descriptions{
+    background: #000;
+    display: flex;
+    width: 65%;
+    color: #fff;
+    overflow: hidden;
+}
+
+.descriptions::after{
+    content: " ";
+    width: 2rem;
+    height: calc(100% + 5rem);
+    background: #f2f2f2;
+    right: 35%;
+    top: -1.5rem;
+    position: absolute;
+    transform: rotate(10deg);
+}
+
+.descriptions img{
+    width: 11rem;
+    height: 11rem;
+    margin-right: 2rem;
+}
+
+.descContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem;
+    width: 100%;
+}
+
+.descContent h5{
+    font-size: 1.75rem;
+    margin-bottom: 0px;
+}
+
+.descContent hr{
+    width: 100%;
+}
+
+.btnItem>button{
+    display: inline-block;
+    font-size: 1.65rem;
+    margin-left: 1rem;
+    vertical-align: middle;
+    padding-top: 0.3rem;
+}
+
+.btnItem span, .btnItem span button , .btnItem>button{
+    background: #fff;
+    min-width: 40px;
+    border: none;
+    color: #000;
+    height: 40px;
+    border-radius: 0px;
+}
+
+.btnItem span input{
+    padding: 0px;
+    width: 2rem !important;
+}
+
+.btnItem span button{
+    font-size: 2rem;
+}
+
+
+.prices{
+    display: flex;
+    width: 35%;
+    flex-direction: column;
+    padding: 1rem 0px;
+    padding-left: 3rem;
+    justify-content: center;
+    color: #000;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.prices::after{
+    content: url("/public/assets/Ornament/Stripes\ -\ Black.png");
+    height: 5rem;
+    width: 5rem;
+    position: absolute;
+}
+
+.prices::before{
+    content: " ";
+    width: 1.5rem;
+    height: calc(100% + 2rem);
+    position: absolute;
+    top: 50%;
+    background-color: #f2f2f2;
+    right: calc(35%);
+    transform: rotate(0deg);
+}
+
+.sumPrice{
+    background: #f2f2f2;
+    margin-top: 5rem;
+    padding: 1rem 2rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+.sumPrice>*{
+    margin: 1rem 0px;
+}
+
+.sumRow{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.sumRow>span{
+    content: ' ';
+    width: 1px;
+    height: calc(100% + 2rem);
+    background: #000;
+    position: absolute;
+    transform: rotate(15deg);
+    top: -1rem;
+    left: 50%;
+}
+
+.sumPrice button{
+    background: #000;
+    border: none ;
+    color: #fff;
+    padding: 1rem 1.5rem;
+}
+
+.container h2{
+   
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.container button{
+    cursor: pointer;
+}
