@@ -40,7 +40,7 @@ export default function FooterComponent() {
         </a>  
       </Link>
 
-      <Link href='/help'>
+      <Link href='/contact'>
         <a>  
           <p className={styles.help}>Help</p>
         </a>  
