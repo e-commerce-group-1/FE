@@ -1,10 +1,11 @@
+import styles from "../../styles/DetailProduct.module.css";
+import {i, icon, quantityModifier, quantityPicker} from "../../styles/DetailProduct.module.css";
 import { Breadcrumb, Container, Grid, Button, Icon, Input } from 'semantic-ui-react'
 import Image from 'next/image'
 import Link from 'next/link';
 import shoes from "../../public/detail-dummy.jpg";
 import { QuantityPicker } from 'react-qty-picker';
-import styles from "../../styles/DetailProduct.module.css";
-import {i, icon, quantityModifier, quantityPicker} from "../../styles/DetailProduct.module.css";
+import { useRouter } from "next/router";
 
 const sections = [
   { key: 'Home', content: 'Home', link: true },
@@ -14,6 +15,66 @@ const sections = [
 ]
 
 export default function DetailProduct(props) {
+
+  const router = useRouter();
+
+  function returnBuyNow(){
+    if (typeof window !== "undefined") {
+      if (!localStorage.getItem("token")) {
+        return (
+          <>
+          </>    
+        )
+    }   
+
+    if (localStorage.getItem("token")) {
+      return (  
+        <div>
+              <Link href='/checkout/[id]'>
+                <a>
+                  <button  className={styles.buy}>
+                  Buy Now <Icon name='shopping bag' className={`${i} ${icon}`} />
+                  </button>
+                </a>
+              </Link>
+            </div>
+      )  
+    }
+  }
+}
+
+function returnAddToCard(){
+  if (typeof window !== "undefined") {
+    if (!localStorage.getItem("token")) {
+      return (
+        <div>
+          <Link href='/login'>
+            <a>
+              <button className={styles.cart}>
+                Add to Cart <Icon name='shop' className={`${i} ${icon}`} />
+              </button>
+            </a>
+          </Link>
+        </div>  
+      )
+    }   
+
+  if (localStorage.getItem("token")) {
+      return (  
+        <div>
+          <Link href='/'>
+            <a>
+              <button className={styles.cart}>
+                Add to Cart <Icon name='shop' className={`${i} ${icon}`} />
+              </button>
+            </a>
+          </Link>
+        </div>
+      )  
+    }
+  }
+}
+
   return (
     <div className={styles.container}>
     <Breadcrumb icon='right angle' sections={sections} style={{fontSize: "16px", fontWeight: "bold", textDecoration: "none", color: "#000", backgroundColor: "#F0F0F0", marginBottom: "2%"}} />
@@ -28,20 +89,10 @@ export default function DetailProduct(props) {
           </div>
 
           <div className={styles.shop}>
-            <div>
-              <button className={styles.cart}>
-                Add to Cart <Icon name='shop' className={`${i} ${icon}`} />
-              </button>
-            </div>
-            <div>
-              <Link href='/checkout/[id]'>
-                <a>
-                  <button  className={styles.buy}>
-                  Buy Now <Icon name='shopping bag' className={`${i} ${icon}`} />
-                  </button>
-                </a>
-              </Link>
-            </div>
+              <>
+                {returnAddToCard()}
+                {returnBuyNow()}
+              </>
           </div>
         </div>
 
@@ -56,22 +107,50 @@ export default function DetailProduct(props) {
                 />
             </div>
             <div>
-              <div className={styles.detail}></div>
-              <div className={styles.detail}></div>
-              <div className={styles.detail}></div>
-              <div className={styles.detail}></div>
+              <div className={styles.detail}>
+                <Image
+                    src="https://picsum.photos/100"
+                    alt="display"
+                    width="100px"
+                    height="100px"
+                  />
+              </div>
+              <div className={styles.detail}>
+                <Image
+                    src="https://picsum.photos/100"
+                    alt="display"
+                    width="100px"
+                    height="100px"
+                  />
+              </div>
+              <div className={styles.detail}>
+                <Image
+                    src="https://picsum.photos/100"
+                    alt="display"
+                    width="100px"
+                    height="100px"
+                  />
+              </div>
+              <div className={styles.detail}>
+                <Image
+                    src="https://picsum.photos/100"
+                    alt="display"
+                    width="100px"
+                    height="100px"
+                  />
+              </div>
             </div>
           </div>
           <div className={styles.size}>
             <p>Select Size</p>
             <div className={styles.sizeContainer}>
-              <div className={styles.sizeOption}>35</div>
-              <div className={styles.sizeOption}>36</div>
-              <div className={styles.sizeOption}>37</div>
-              <div className={styles.sizeOption}>38</div>
-              <div className={styles.sizeOption}>39</div>
-              <div className={styles.sizeOption}>40</div>
-              <div className={styles.sizeOption}>41</div>
+              <button className={styles.sizeOption}>35</button>
+              <button className={styles.sizeOption}>36</button>
+              <button className={styles.sizeOption}>37</button>
+              <button className={styles.sizeOption}>38</button>
+              <button className={styles.sizeOption}>39</button>
+              <button className={styles.sizeOption}>40</button>
+              <button className={styles.sizeOption}>41</button>
             </div>
           </div>
         </div>
