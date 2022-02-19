@@ -1,50 +1,56 @@
-/* Grid {
-  text-align: center;
-  height: 100vh;
-  vertical-align:middle;
+.greet p {
+  font-size: 50px;
+  font-family: Trebuchet MS;
 }
-
-Grid.Column {
-  max-width: 450;
-} */
-
-/* .all {
-  font-family: 'Arial';
-} */
-
-
-/* .modal_body_overflow {
-  height: 70vh;
-  overflow-y: scroll;
-} */
-
 
 .header {
   color: white;
-  /* text-decoration: underline; */
 }
 
 .trebuchet {
   font-family: Trebuchet MS;
 }
 
-.borderFull {
+/* .borderFull {
   border: solid 2px black;
-}
+} */
 
 .borderBottom {
   border-bottom: solid 2px;
 }
 
-.btnMsk {
+.btnMsk p {
+  font-size: 15px;
   font-family: 'Trebuchet MS';
 }
 
-
-
-.borderNone-Input[placeholder="Email"] {
-  border: none;
+.btnMsk p:hover {
+  color: rgb(221, 227, 238);
 }
+
+
+.daftar a {
+  text-decoration: underline;
+}
+
+.daftar a:hover {
+  color: rgb(120, 169, 243);
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* .border_none input {
+  border: none;
+} */
 
 /* .column {
   border: none;

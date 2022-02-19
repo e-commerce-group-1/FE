@@ -1,48 +1,37 @@
 import { React } from "react";
 import { Button, Form, Grid, Header, Image, Message, Segment,Input } from 'semantic-ui-react'
-import { header, trebuchet, borderFull, borderBottom, btnMsk, borderNone }  from "../styles/login.module.css"
-// import { FormInput }  from "../styles/login.module.css"
-// import { ui fluid left icon input  }  from "../'styles/login.module.css"
-// import  { modal_body_overflow }  from "../../../styles/Article.module.sass"
-
-
+import { greet, header, trebuchet,borderBottom, btnMsk, input, button, daftar }  from "../styles/login.module.css"
+import { FaSignInAlt } from 'react-icons/fa';
 
 function Login() {
   return (
   <div className={trebuchet}>
     <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle' >
-    <Grid.Column  style={{ maxWidth: 450 }}  >
-      <Header className={trebuchet} className={header}  as='h2'>
+    <Grid.Column className={greet}  style={{ maxWidth: 450 }}>
+    <p>Silahkan Masuk</p>
+      <Header className={`${trebuchet} ${header}`}  as='h2'>
         {/* <Image src='/BrownJacket[Login].jpg' /> Silahkan Masuk */}
-        Silahkan Masuk
       </Header>
-      <Form className={trebuchet} className={borderFull} size='large'>
-        <Segment >
-          <Form.Input className={trebuchet}  
-          className={borderNone} className={borderBottom}   fluid icon='user' iconPosition='left' placeholder='Email' />
-          <Form.Field >
+      <Form className={trebuchet} size='large'>
+        <Segment>
+          <Form.Input className={`${trebuchet} ${borderBottom}`} fluid icon='user' iconPosition='left' placeholder='Email' />
+          <Form.Field>
             <Input
-            
-            className={trebuchet}
-            className={borderNone}
-            className={borderBottom} type='password' 
-            placeholder='Kata Sandi' iconPosition='left' 
-            fluid icon='lock' />
+              className={`${trebuchet} ${borderBottom} ${input}`} 
+              type='password' 
+              placeholder='Kata Sandi' iconPosition='left' 
+              fluid icon='lock' 
+            />
           </Form.Field>
-          
-          {/* <Form.Field>
-  <label>Enter Password</label>
-  <Input type='password' />
-</Form.Field> */}
-
-          <Button className={trebuchet} className={btnMsk} color='black' fluid size='large'>
-              Masuk
+          <Button  className={`${trebuchet} ${btnMsk} ${button}`} color='black' fluid size='Large'>
+             <p>Masuk <FaSignInAlt /> </p>
+              
           </Button>
+          <div className={`${trebuchet}  ${daftar}`}>
+        Belum Punya Akun? <a href='register'>Daftar</a>
+      </div>
         </Segment>
       </Form>
-      <Message className={trebuchet} className={borderFull}>
-        Belum Punya Akun? <a href='register'>Daftar</a>
-      </Message>
     </Grid.Column>
   </Grid>
     </div>

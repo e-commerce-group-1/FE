@@ -1,4 +1,13 @@
-.p1 {
+.welcomeImg {
+  width: 50%;
+  height: 100%;
+}
+
+.classFlex {
+  display: flex;
+}
+
+.greet p {
   font-size: 50px;
   font-family: Trebuchet MS;
 }
@@ -12,17 +21,43 @@
   text-align: center;
 }
 
-.borderFull {
+/* .borderFull {
   border: solid 2px black;
-}
+} */
 
 .borderBottom {
   border-bottom: solid 2px;
 }
 
-.borderNone {
-  border: none;
+.btnDftr p {
+  font-size: 15px;
+  font-family: 'Trebuchet MS';
 }
+
+.btnDftr p:hover {
+  color: rgb(221, 227, 238);
+}
+
+/* .masuk p {
+  font-size: 15px;
+  text-align-last: left;
+} */
+
+.masuk a {
+  text-decoration: underline;
+  /* position: relative;
+  padding: 5p; */
+}
+
+.masuk a:hover {
+  color: rgb(120, 169, 243);
+}
+
+
+
+/* .borderNone {
+  border: none;
+} */
 
 /* .borderBottom {
   border-bottom: solid 2px black;
