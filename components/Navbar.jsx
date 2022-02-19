@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {Icon, Checkbox} from 'semantic-ui-react';
 import { useRouter } from "next/router";
-import logo from "../public/LOGO.png"
+import logo from "../public/al.png";
 
 function NavbarComponent() {
 
@@ -16,7 +16,7 @@ function NavbarComponent() {
           <>
             <div className={styles.user}>
             <Link href='/login'>
-              <a>
+              <a className={router.pathname == "/login" ? "active" : ""}>
                 <button className={styles.login}>
                 Login <Icon name='external alternate' className={styles.icon} />
                 </button>
@@ -24,7 +24,7 @@ function NavbarComponent() {
             </Link>
 
           <Link href='/login'>
-            <a>
+            <a className={router.pathname == "/login" ? "active" : ""}>
               <button className={styles.circle} >
               <Icon name='shop' className={styles.icon} />
               </button>
@@ -40,7 +40,7 @@ function NavbarComponent() {
         <>  
           <div className={styles.user}>
             <Link href='/cart'>
-              <a>
+              <a className={router.pathname == "/cart" ? "active" : ""}>
                 <button className={styles.circle}>
                 <Icon name='shop' className={styles.icon} />
                 </button>
@@ -48,7 +48,7 @@ function NavbarComponent() {
             </Link>
 
             <Link href='/'>
-              <a>
+              <a className={router.pathname == "/" ? "active" : ""}>
                 <button className={styles.circle} 
                   onClick={() => {
                   router.push("/");
@@ -85,29 +85,33 @@ function NavbarComponent() {
       
         <div className={styles.container}>
           <div className={styles.logo}>
-            <Image
-                  src={logo}
-                  alt="logo"
-                  width="75px"
-                  height="75px"
-              />
+            <Link href='/'>
+              <a className={router.pathname == "/" ? "active" : ""}>
+                <Image
+                      src={logo}
+                      alt="logo"
+                      width="151px"
+                      height="61px"
+                  />
+                </a>
+            </Link>
           </div>
 
           <div className={styles.menu}>
-            <Link href='/new'>
-            <a className={styles.menus}>  
+            <Link href="/new">
+            <a className={`${router.pathname == "/new" ? "active" : ""} ${styles.menus}`}>  
                 NEW RELEASE
             </a>  
             </Link>  
 
-            <Link href='/new'>
-            <a className={styles.menus}>  
+            <Link href='/men'>
+            <a className={`${router.pathname == "/men" ? "active" : ""} ${styles.menus}`}>  
                 MEN
             </a>  
             </Link> 
 
             <Link href='/woman'>
-            <a className={styles.menus}>  
+            <a className={`${router.pathname == "/woman" ? "active" : ""} ${styles.menus}`}>  
                 WOMAN
             </a>  
             </Link> 
