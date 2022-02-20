@@ -25,8 +25,8 @@ export default function Register() {
     axios.post('http://3.1.211.120:8081/users', body)
     .then((data) => {
       Swal.fire(
-        'Success!',
-        'Anda bisa login sekarang!',
+        'Berhasil Daftar!',
+        'Anda Bisa Masuk Sekarang!',
         'success'
       )
       console.log(data);
@@ -38,29 +38,29 @@ export default function Register() {
       router.push('/login')
     })
     .catch((err) => {
-      Swal.fire('Ooops!', 'Data tidak valid!', 'error');
+      Swal.fire('Gagal Daftar', 'Data Tidak Valid!', 'error');
       console.log(err);
       setShow(true);
 
       if (name === '' && user_name === '' && email === '' && password === '') {
-        Swal.fire('Ooops!', 'Data tidak boleh kosong!', 'error')
+        Swal.fire('Gagal Daftar', 'Data Tidak Boleh Kosong!', 'error')
       }
       else if (name.match(/^$|\s+/)) {
         setShow(true);
-        Swal.fire('Ooops!','Nama tidak valid!','error')
+        Swal.fire('Gagal Daftar','Nama Tidak Valid!','error')
       }
       else if (user_name.match(/^$|\s+/)) {
         setShow(true);
-        Swal.fire('Ooops!','Username tidak valid!','error')
+        Swal.fire('Gagal Daftar','Username Tidak Valid!','error')
       }
       else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
         setShow(true);
-        Swal.fire('Ooops!','Email tidak valid!','error')
+        Swal.fire('Gagal Daftar','Email Tidak Valid!','error')
       }
       else if (!/^\S*$/.test(password)) {
         setShow(true);
         // password.replace(/\s+/g, '');
-        Swal.fire('Ooops!','Password tidak valid', 'error')
+        Swal.fire('Gagal Daftar','Password Tidak Valid', 'error')
       }
 
       setName('');

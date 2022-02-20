@@ -1,10 +1,12 @@
 import { React, useState } from "react";
-import { Button, Form, Grid, Header,Segment,Input, Dimmer, Loader, Message, Icon } from 'semantic-ui-react'
+import { Button, Form, Grid, Header,Segment,Input, Dimmer, Loader, Message, Icon, } from 'semantic-ui-react'
 import { greet, header, trebuchet,borderBottom, btnMsk, input, button, daftar }  from "../styles/login.module.css"
 import { FaSignInAlt } from 'react-icons/fa';
 import  axios  from "axios";
 import { useRouter } from "next/router";
 import Swal from "sweetalert2";
+import Link from "next/link";
+
 
 function Login() {
   const [email, setEmail] = useState("")
@@ -22,21 +24,21 @@ function Login() {
     if (email === '' && password  === '') {
       Swal.fire(
         '',
-        'Email dan Password tidak boleh kosong !',
+        'Email dan Password Tidak Boleh Kosong!',
         'error')
     }
 
     else if (email === '') {
       Swal.fire(
         '',
-        'Email tidak boleh kosong !',
+        'Email Tidak Boleh Kosong!',
         'error')
     }
 
     else if (password === '') {
       Swal.fire(
         '',
-        'Password tidak boleh kosong !',
+        'Password Tidak Boleh Kosong!',
         'error')
     } else {
       handleSubmit()
@@ -76,8 +78,8 @@ function Login() {
         setEmail('')
         setPassword('')
         Swal.fire(
-          '',
-          'Beberapa informasi Anda tidak benar. Mohon coba lagi.',
+          'Gagal Masuk',
+          'Beberapa Informasi Anda Tidak Benar. Mohon Coba Lagi',
           'error'
         )
         console.log(err, "Error Occured");
@@ -125,7 +127,7 @@ function Login() {
               <p>Masuk <FaSignInAlt /> </p>
           </Button>
           <div className={`${trebuchet}  ${daftar}`}>
-        Belum Punya Akun? <a href='register'>Daftar</a>
+        Belum Punya Akun? <Link href='/register'><a>Daftar</a></Link>
       </div>
         </Segment>
         
