@@ -1,13 +1,16 @@
+import React,{ useState } from "react";
 import styles from "../styles/Navbar.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import {Icon, Checkbox} from 'semantic-ui-react';
 import { useRouter } from "next/router";
 import logo from "../public/al.png";
+import Swal from "sweetalert2";
 
 function NavbarComponent() {
 
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
   function returnNavbar(){
     if (typeof window !== "undefined") {
@@ -51,9 +54,26 @@ function NavbarComponent() {
               <a className={router.pathname == "/" ? "active" : ""}>
                 <button className={styles.circle} 
                   onClick={() => {
-                  router.push("/");
-                  localStorage.clear();
-                }}>
+                        Swal.fire({
+                        title: 'Anda yakin ingin keluar?',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Ya',
+                        cancelButtonText: 'Batal'
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                            router.push("/");
+                            localStorage.clear();
+                          Swal.fire(
+                            'Anda berhasil keluar!',
+                            '',
+                            'success'
+                          )
+                        }
+                      })
+                    }}>
                   <Icon name='log out' className={styles.icon} />
                 </button>
               </a>
