@@ -14,6 +14,8 @@ function ItemCart() {
                 <span className={styles.btnItem}>
                     <QuantityPicker min={0}/>
                     <button><FiTrash2/></button>
+                    <p>qty : 1</p>
+                    <p>size : 1</p>
                 </span>
             </div>
         </div>

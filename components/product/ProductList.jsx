@@ -1,9 +1,62 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ProductCard from './ProductCard'
-import {  Container  } from 'semantic-ui-react'
+import {  Card, Container, Loader  } from 'semantic-ui-react'
 import styles from '../../styles/ProductList.module.css'
+import { useSelector } from 'react-redux'
 
 function ProductList() {
+    const [load, setLoad] = useState(true);
+    const [cards, setCards] =useState([])
+    const [count , setCount] = useState(1)
+    const [currCards, setCurrcards] = useState([])
+    const products = useSelector(({listProduct})=>listProduct)
+
+    useEffect(()=>{
+        setTimeout(() => {
+            setLoad(false)
+        }, 1000);
+    },[products])
+
+    function setLoading() {
+        if(load){
+            return <Loader active inline='centered' />
+        }
+        return (
+
+                products.slice(0,8).map((el, i)=>(
+                <ProductCard 
+                id= {i}
+                image = {el.image}
+                name = {el.name}
+                price = {el.price}
+                key={i}
+                />
+                ))
+        )
+    }
+
+    function loadMore() {
+        console.log("loaded",count);
+
+        let start = count * 8,
+        end = start + 8,
+         sliceCards = products.slice(start,end).map((el, i)=>(
+            <ProductCard 
+            id= {start + i}
+            image = {el.image}
+            name = {el.name}
+            price = {el.price}
+            key={start +  i}
+            />
+            ))
+
+        setCurrcards([currCards,...sliceCards])
+        setCards(currCards)
+        console.log(cards);
+        setCount(count+1);
+    }
+    // www.AlphatarStore
+    
   return (
     <Container fluid className={styles.container}>
         <div className={styles.categoryList}>
@@ -11,10 +64,10 @@ function ProductList() {
                 <span className={styles.categoryTitle}>Best Seller</span>
             </div>
             <div className={styles.categoryItem}>
-                <span> All</span>
+                <span className={styles.active}> All</span>
             </div>
             <div className={styles.categoryItem}>
-                <span className={styles.active}> Sneakers</span>
+                <span> Sneakers</span>
             </div>
             <div className={styles.categoryItem}>
                 <span> Shirt</span>
@@ -28,11 +81,14 @@ function ProductList() {
         </div>
         
         <div className={styles.productlist}>
-          <ProductCard/>
+            <Card.Group>
+                { setLoading() }
+                {cards}
+            </Card.Group>
         </div>
 
         <div className={styles.moreButton}>
-            <button>Load More</button>
+            <button onClick={loadMore}>Load More</button>
         </div>
     </Container>
   )
