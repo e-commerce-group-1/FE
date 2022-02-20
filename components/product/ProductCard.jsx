@@ -7,16 +7,21 @@ function ProductCard(props) {
 
     const nav = useRouter();
 
-    const [id, setId] = useState(props.id)
-    const [image, setImage] = useState(props.image)
-    const [name, setName] = useState(props.name)
-    const [price, setPrice] = useState( formatRupiah(props.price))
+    const [id] = useState(props.id)
+    const [image] = useState(props.image)
+    const [name] = useState(props.name)
+    const [price] = useState( formatRupiah(props.price))
     
     function formatRupiah(number){
         let result =   "Rp. " + new Intl.NumberFormat("id-ID", {
             currency: "IDR"}).format(number)
         console.log(id);
         return result;
+    }
+
+    function dashIt(string){
+        let dummyString = string.split(/[\s]+/).join("-");
+        return dummyString;
     }
 
     function reRoute(path){
@@ -34,7 +39,7 @@ function ProductCard(props) {
                 <div className={styles.buttonSection}>
                     <span></span>
                     {/* <button>Add Cart</button> */}
-                    <button onClick={()=>reRoute("/product/"+`${id}`)}>Buy Now</button>
+                    <button onClick={()=>reRoute("/product/"+`${id}`+'-'+dashIt(`${name}`))}>Buy Now</button>
                 </div>
             </div>
         </Card>
