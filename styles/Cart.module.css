@@ -45,9 +45,7 @@
     transform: rotate(10deg);
 }
 
-.descriptions img{
-    width: 11rem;
-    height: 11rem;
+.descriptionsImg {
     margin-right: 2rem;
 }
 

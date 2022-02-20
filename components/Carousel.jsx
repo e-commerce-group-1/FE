@@ -3,6 +3,7 @@ import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import style from '../styles/Carousel.module.css'
+import Image from 'next/image';
 
 function CustomCarousel() {
     let arrow = React.createRef();
@@ -25,18 +26,15 @@ function CustomCarousel() {
   return (
         <Slider ref={arrow} {...sliderSettings} className={style.carouselContainer}>
             <div>
-                <a className={style.carouselItem}>
-                    <img src="/assets/carousel/Promo Banner.png" alt="" onClick={imgClick} />
-                </a>
-            </div>
-            <div>
                 <div className={style.carouselItem}>
-                    <img src="/assets/carousel/Promo Banner.png" alt="" />
-                </div>
-            </div>
-            <div>
-                <div className={style.carouselItem}>
-                    <img src="/assets/carousel/Promo Banner.png" alt="" />
+                    <Image 
+                    src="/assets/carousel/Promo Banner.png" 
+                    alt="Promo Banner"
+                    width={'1200px'} 
+                    height={'600px'} 
+                    layout='responsive'
+                    onClick={imgClick}
+                    />
                 </div>
             </div>
         </Slider>
