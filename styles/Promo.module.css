@@ -1,6 +1,5 @@
 .promoCard{
     display: flex;
-    height: 200px;
     background-color: #fff;
     padding: 20px 15px;
     margin-bottom: 3rem;
@@ -14,17 +13,17 @@
     justify-content: flex-start;
 }
 
-.promoCard img{
+.promoCard .cardImage{
     position: absolute;
     top: -5rem;
 }
 
-.promoLeft img{
+.promoLeft .cardImage{
     width: 15rem;
     left: -2rem;
 }
 
-.promoRight img{
+.promoRight .cardImage{
     width: 18rem;
     right: -3rem;
 }

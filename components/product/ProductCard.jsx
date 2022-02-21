@@ -2,6 +2,7 @@ import styles from '../../styles/ProductList.module.css'
 import { Card } from 'semantic-ui-react'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import Image from 'next/image';
 
 function ProductCard(props) {
 
@@ -30,7 +31,12 @@ function ProductCard(props) {
 
   return (
         <Card style = {{ minWidth : "23%"}}>
-            <img className={styles.cardImg} src={image} alt="" />
+            <Image 
+            className={styles.cardImg} 
+            height= '350px'
+            width = '350px'
+            src={image} 
+            alt="product-item" />
             <div className={styles.contentCard}>
                 <div className={styles.descriptionSection}>
                     <h5>{name}</h5>
