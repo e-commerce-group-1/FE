@@ -45,7 +45,7 @@ function ProductCard(props) {
                 <div className={styles.buttonSection}>
                     <span></span>
                     {/* <button>Add Cart</button> */}
-                    <button onClick={()=>reRoute("/product/"+`${id}`+'-'+dashIt(`${name}`))}>Buy Now</button>
+                    <button onClick={()=>reRoute("/product/"+`${id}`)}>Buy Now</button>
                 </div>
             </div>
         </Card>

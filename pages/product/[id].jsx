@@ -6,6 +6,8 @@ import Link from 'next/link';
 import shoes from "../../public/detail-dummy.jpg";
 import { QuantityPicker } from 'react-qty-picker';
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const sections = [
   { key: 'Home', content: 'Home', link: true },
@@ -16,7 +18,20 @@ const sections = [
 
 export default function DetailProduct(props) {
 
+  const products = useSelector(({listProduct})=>listProduct)
   const router = useRouter();
+  const {id} = router.query
+  const productDetail = products.find(el => el.id = id)
+  useEffect(() => {
+    console.log(productDetail);    
+  }, [products])
+  
+  function formatRupiah(number){
+    let result =   "Rp. " + new Intl.NumberFormat("id-ID", {
+        currency: "IDR"}).format(number)
+    console.log(id);
+    return result;
+  }
 
   function returnBuyNow(){
     if (typeof window !== "undefined") {
@@ -81,10 +96,10 @@ function returnAddToCard(){
 
       <div className={styles.main}>
         <div className={styles.sideLeft}>
-          <p className={styles.title}>Product Name</p>
-          <p className={styles.description}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quisquam ea repudiandae in provident cupiditate iste tenetur delectus repellat? Fugiat laborum soluta error odit officiis aliquid itaque hic, in voluptatibus.</p>
+          <p className={styles.title}>{productDetail.name}</p>
+          <p className={styles.description}>{productDetail.description}</p>
           <div className={styles.priceQuantity}>
-            <div className={styles.price}>Rp. 10.000.000</div>
+            <div className={styles.price}>{formatRupiah(productDetail.price)}</div>
             <div className={styles.quantity}><QuantityPicker min={0} className={`${quantityModifier} ${quantityPicker}`} /></div>
           </div>
 
@@ -100,7 +115,7 @@ function returnAddToCard(){
           <div className={styles.containerImage}>
             <div className={styles.displayImage}>
               <Image
-                  src={shoes}
+                  src={productDetail.image}
                   alt="display"
                   width="580px"
                   height="454px"

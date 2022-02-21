@@ -25,7 +25,7 @@ function ProductList() {
 
                 products.slice(0,8).map((el, i)=>(
                 <ProductCard 
-                id= {i}
+                id= {el.id}
                 image = {el.image}
                 name = {el.name}
                 price = {el.price}
